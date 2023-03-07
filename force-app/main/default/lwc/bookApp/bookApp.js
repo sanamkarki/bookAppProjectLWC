@@ -10,6 +10,7 @@ export default class BookAppLWC extends LightningElement {
       this.fetchMethod(event.target.value);
     }
   }
+  //adding comments
   connectedCallback() {
     this.fetchMethod();
   }
