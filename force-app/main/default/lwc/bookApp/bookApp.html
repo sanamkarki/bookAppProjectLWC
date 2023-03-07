@@ -1,0 +1,23 @@
+<template>
+    <lightning-card></lightning-card>
+    <lightning-card title="Book Search App">
+        <lightning-input type="text" label="Book Search" placeholder="Search for a book..."
+            onkeypress={changeHandler}></lightning-input>
+        <lightning-layout multiple-rows>
+            <template if:true={dataHolder}>
+                <lightning-layout>
+                    <template for:each={dataHolder.items} for:item="eachBook">
+                        <lightning-layout-item size="2" padding="around-large" key={eachBook.id}>
+                            <div>
+                                <div><strong>Image</strong></div> <img
+                                    src={eachBook.volumeInfo.imageLinks.smallThumbnail}>
+                                <div><strong>Author:</strong> {eachBook.id}</div>
+                                <div><strong>Author Data:</strong> {eachBook.volumeInfo.title}</div>
+                            </div>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>
